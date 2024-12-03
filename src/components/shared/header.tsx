@@ -1,33 +1,35 @@
 import React from "react";
-import { Container } from "./Container";
 import Image from "next/image";
 import { Button, Input } from "../ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
+import { Container } from "./container";
 const Header = () => {
   return (
-    <header>
-      <Container className="flex items-center justify-between py-8">
-        {/* Левая часть */}
+    <header className="mt-5 border-b border-gray-100 pb-4">
+      <Container className="flex justify-between">
         <a href="/">
-          <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="Logo" width={35} height={35} />
+          <div className="flex">
+            <Image
+              className="mr-3 flex-shrink-0 object-contain"
+              src="/logo.png"
+              alt="Logo"
+              width={30}
+              height={30}
+            />
             <div>
-              <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
-              <p className="text-sm text-gray-400 leading-3">
-                вкусней уже некуда
-              </p>
+              <h1 className="font-black text-2xl">NEXT PIZZA</h1>
+              <div className="text-gray-500 leading-none">вкуснее некуда</div>
             </div>
           </div>
         </a>
-        
-        {/* Правая часть */}
-        <div className="flex items-center gap-3">
-          <Button variant="outline" className="flex items-center gap-1">
-            <User size={16} />
-            Войти
-          </Button>
+        <div className="">
+          <Input />
         </div>
-        <div>
+
+        <div className="flex">
+          <Button variant={"outline"} className="mr-3">
+            <User size={15} className="mr-1" /> Профиль
+          </Button>
           <Button className="group relative">
             <b>520 ₽</b>
             <span className="h-full w-[1px] bg-white/30 mx-3" />
