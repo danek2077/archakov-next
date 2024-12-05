@@ -19,7 +19,7 @@ const LeftMain = () => {
   return (
     <div className="w-48">
       <Title text="Фильтрация" className="font-bold" size="sm" />
-      <div className="mt-4 space-y-2 border-b border-gray-100 pb-4 mb-4">
+      <div className="mt-2 space-y-2 border-b border-gray-100 pb-4 mb-4">
         <FilterCheckbox
           text="Можно собирать"
           value="ya1"
@@ -41,9 +41,9 @@ const LeftMain = () => {
         </div>
         <RangeSlider max={1000} min={1} step={1} className="mt-5" />
       </div>
-      <div className="mt-4 border-b border-gray-100 pb-4 mb-4">
+      <div className="mt-4 pb-4 mb-4">
         <div className="font-bold">Ингридиенты</div>
-        <FilterIngridients/>
+        <FilterIngridients />
       </div>
     </div>
   );
