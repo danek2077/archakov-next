@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { Button, Input } from "../ui";
+import { Button, Input } from "../../ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
-import { Container } from "./container";
+import { Container } from "../../shared/container";
 const Header = () => {
+
   return (
     <header className="mt-5 border-b border-gray-100 pb-4">
       <Container className="flex justify-between">
