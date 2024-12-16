@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { cn } from "@/lib/utils";
 import { ArrowDown } from "lucide-react";
 import React from "react";
@@ -13,7 +13,7 @@ const Categories = () => {
     { id: 4, name: "С курицей" },
     { id: 5, name: "Ещё" },
   ];
-  const {category_state} = useCategoryStore()
+  const { category_state } = useCategoryStore();
   return (
     <div className="inline-flex bg-gray-50 rounded-2xl p-1">
       {category_elements.map((el, i) => (

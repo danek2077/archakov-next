@@ -4,8 +4,10 @@ import Image from "next/image";
 import { Button, Input } from "../../ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
 import { Container } from "../../shared/container";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { SearchInput } from "@/components/shared/search-input";
 const Header = () => {
-
   return (
     <header className="mt-5 border-b border-gray-100 pb-4">
       <Container className="flex justify-between">
@@ -24,10 +26,7 @@ const Header = () => {
             </div>
           </div>
         </a>
-        <div className="">
-          <Input />
-        </div>
-
+        <SearchInput className="w-[600]" />
         <div className="flex">
           <Button variant={"outline"} className="mr-3">
             <User size={15} className="mr-1" /> Профиль
