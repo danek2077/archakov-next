@@ -2,20 +2,11 @@ import React from "react";
 import { FilterCheckbox } from "./filter-checkbox";
 import { Button, Checkbox, Input } from "../ui";
 import { cn } from "@/lib/utils";
-
-const FilterIngridients = () => {
-  const items = [
-    "Сырный соус",
-    "Моцарелла",
-    "Чеснок",
-    "Солёные огурчики",
-    "Красный лук",
-    "Томаты",
-    "Космик",
-    "Ручник",
-    "Медовик",
-    "Папаутэ",
-  ];
+import { FilterIngridient } from "../../../hooks/useIngredients";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+type Props = { items: FilterIngridient };
+const FilterIngridients: React.FC<Props> = ({ items }) => {
   if (items.length > 4) {
     const [showAll, setShowAll] = React.useState<boolean>(false);
     const [search, setSearch] = React.useState("");
@@ -36,8 +27,8 @@ const FilterIngridients = () => {
             {!showAll &&
               items
                 .slice(0, 4)
-                .map((el, i) => (
-                  <FilterCheckbox value={el} text={el} key={i} />
+                .map((el) => (
+                  <FilterCheckbox value={el.name} text={el.name} key={el.id} />
                 ))}
             {showAll && (
               <div
@@ -48,12 +39,22 @@ const FilterIngridients = () => {
               >
                 {search.length === 0 &&
                   items.map((el, i) => (
-                    <FilterCheckbox value={el} key={i} text={el} />
+                    <FilterCheckbox
+                      value={el.name}
+                      text={el.name}
+                      key={el.id}
+                    />
                   ))}
                 {search.length !== 0 &&
                   items.map((el, i) => {
-                    if (el.toLowerCase().includes(search.toLowerCase())) {
-                      return <FilterCheckbox value={el} key={i} text={el} />;
+                    if (el.name.toLowerCase().includes(search.toLowerCase())) {
+                      return (
+                        <FilterCheckbox
+                          value={el.name}
+                          text={el.name}
+                          key={el.id}
+                        />
+                      );
                     }
                   })}
               </div>
@@ -71,10 +72,9 @@ const FilterIngridients = () => {
   } else {
     return (
       <div>
-        {items.map((el, i) => (
-          <FilterCheckbox value={el} text={el} key={i} />
+        {Array.from({ length: 4 }, (_,i) => (
+          <Skeleton width={200} height={25} borderRadius={8} key={i}/>
         ))}
-        ;
       </div>
     );
   }

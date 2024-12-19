@@ -2,8 +2,10 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Input } from "../ui";
 import Link from "next/link";
-import { useClickAway } from "react-use";
-import { Ingredient } from "@prisma/client";
+import { useClickAway, useDebounce } from "react-use";
+import { Ingredient, Product } from "@prisma/client";
+import { Api } from "../../../services/api-client";
+import { GetAllProducts } from "../../../services/reqs/products";
 
 interface Props {
   className?: string;
@@ -12,19 +14,21 @@ interface Props {
 export const SearchInput: React.FC<Props> = ({ className }) => {
   const [searchValue, setSearchValue] = React.useState("");
   const [focused, setFocused] = React.useState(false);
-  const [resIngredients, setResIngredients] = React.useState<Ingredient[]>([]);
+  const [resProducts, setResProducts] = React.useState<Product[]>([]);
   const ref = React.useRef(null);
   useClickAway(ref, () => {
     setFocused(false);
   });
+  useDebounce(
+    async () => {
+      const data = await Api.products.GetAllProducts(searchValue);
+      setResProducts(data);
+    },
+    100,
+    [searchValue]
+  );
   const changeSearchHandler = async (event: string) => {
     setSearchValue(event);
-    const res = await fetch("http://localhost:3000/api/ingredients");
-    const data: Ingredient[] = await res.json();
-    const data_filtered = data.filter((e) =>
-      e.name.toLowerCase().includes(event.toLowerCase())
-    );
-    setResIngredients(data_filtered);
   };
   return (
     <div className={cn(className)} ref={ref}>
@@ -35,7 +39,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         onClick={() => setFocused(true)}
         onChange={(e) => changeSearchHandler(e.target.value)}
       />
-      {resIngredients.length > 0 && (
+      {resProducts.length > 0 && (
         <div
           className={cn(
             "absolute bg-white rounded-xl py-2 top-14 shadow-md transition-all duration-200 invisible opacity-0 z-30",
@@ -43,8 +47,13 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
             className
           )}
         >
-          {resIngredients.map((product) => (
+          {resProducts.map((product) => (
             <Link
+              onClick={() => {
+                setFocused(false);
+                setSearchValue("");
+                setResProducts([]);
+              }}
               key={product.id}
               className="flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10"
               href={`/product/${product.id}`}

@@ -5,9 +5,12 @@ import { Input, Title } from "@/components/ui";
 import { RangeSlider } from "@/components/ui/slider";
 
 import React from "react";
+import { useIngrediets } from "../../../../../hooks/useIngredients";
 
 const LeftMain = () => {
   const [state, setState] = React.useState<string[]>([]);
+  const {ingredients} = useIngrediets();
+  
   const func = (option: string, checked: boolean) => {
     if (checked === false) {
       setState((prevState) => prevState.filter((el) => el !== option));
@@ -43,7 +46,7 @@ const LeftMain = () => {
       </div>
       <div className="mt-4 pb-4 mb-4">
         <div className="font-bold">Ингридиенты</div>
-        <FilterIngridients />
+        <FilterIngridients items={ingredients}/>
       </div>
     </div>
   );
