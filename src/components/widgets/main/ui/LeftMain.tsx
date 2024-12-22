@@ -8,15 +8,17 @@ import React from "react";
 import { useIngrediets } from "../../../../../hooks/useIngredients";
 
 const LeftMain = () => {
-  const [state, setState] = React.useState<string[]>([]);
-  const {ingredients} = useIngrediets();
+  const { ingredients } = useIngrediets();
+  const [checkboxStrorage, setCheckboxStorage] = React.useState<string[]>([]);
   
   const func = (option: string, checked: boolean) => {
     if (checked === false) {
-      setState((prevState) => prevState.filter((el) => el !== option));
+      setCheckboxStorage((prevState) =>
+        prevState.filter((el) => el !== option)
+      );
     }
     if (checked === true) {
-      setState((prevState) => [...prevState, option]);
+      setCheckboxStorage((prevState) => [...prevState, option]);
     }
   };
   return (
@@ -26,13 +28,13 @@ const LeftMain = () => {
         <FilterCheckbox
           text="Можно собирать"
           value="ya1"
-          checked={state.includes("ya1")}
+          checked={checkboxStrorage.includes("ya1")}
           onCheckedChange={(checked) => func("ya1", checked)}
         />
         <FilterCheckbox
           text="Новинки"
           value="ya2"
-          checked={state.includes("ya2")}
+          checked={checkboxStrorage.includes("ya2")}
           onCheckedChange={(checked) => func("ya2", checked)}
         />
       </div>
@@ -46,7 +48,7 @@ const LeftMain = () => {
       </div>
       <div className="mt-4 pb-4 mb-4">
         <div className="font-bold">Ингридиенты</div>
-        <FilterIngridients items={ingredients}/>
+        <FilterIngridients items={ingredients} />
       </div>
     </div>
   );

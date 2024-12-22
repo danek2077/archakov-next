@@ -14,6 +14,5 @@ export const useIngrediets = () => {
       )
     );
   }, []);
-  console.log(ingredients);
   return { ingredients };
 };
