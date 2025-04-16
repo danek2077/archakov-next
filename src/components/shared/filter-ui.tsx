@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { pizza_data_type } from "../widgets/main/ui/RightMain";
+import { pizza_data_type } from "../widgets/main/ui/PizzaList";
 import { ProductElemFilter } from "./product-elem-filter";
 import { Title } from "../ui";
 import { useIntersection } from "react-use";

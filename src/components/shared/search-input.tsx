@@ -3,9 +3,8 @@ import { cn } from "@/lib/utils";
 import { Input } from "../ui";
 import Link from "next/link";
 import { useClickAway, useDebounce } from "react-use";
-import { Ingredient, Product } from "@prisma/client";
+import { Product } from "@prisma/client";
 import { Api } from "../../../services/api-client";
-import { GetAllProducts } from "../../../services/reqs/products";
 
 interface Props {
   className?: string;

@@ -2,7 +2,7 @@
 import React from "react";
 import { Button, Title } from "../ui";
 import { Plus } from "lucide-react";
-import { pizza_data_type } from "../widgets/main/ui/RightMain";
+import { pizza_data_type } from "../widgets/main/ui/PizzaList";
 
 export const ProductElemFilter: React.FC<pizza_data_type> = ({
   description,

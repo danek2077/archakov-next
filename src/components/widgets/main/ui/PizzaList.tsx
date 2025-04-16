@@ -59,7 +59,8 @@ const pizzas_data: pizza_data_type[] = [
       "Цыпленок, хуенок Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, eos.",
   },
 ];
-const RightMain = () => {
+
+const PizzaList = () => {
 
   return (
     <div className="w-[1000px]">
@@ -70,4 +71,4 @@ const RightMain = () => {
   );
 };
 
-export default RightMain;
+export default PizzaList;
