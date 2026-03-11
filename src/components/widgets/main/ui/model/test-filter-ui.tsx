@@ -1,6 +1,6 @@
 import { FilterCheckbox } from "@/components/shared/filter-checkbox";
 import React, { Dispatch, SetStateAction } from "react";
-import { FilterIngredient } from "../../../../../../hooks/useIngredients";
+import { FilterIngredient } from "@/entities/ingredient";
 
 type Props = {
   items: FilterIngredient[];

@@ -1,4 +1,6 @@
-export enum ApiRoutes {
-  SEARCH_PRODUCTS = "/products/search",
-  INGREDIENTS = "/ingredients"
-}
+import { apiRoutes } from "@/shared/api/routes";
+
+export const ApiRoutes = {
+  SEARCH_PRODUCTS: apiRoutes.searchProducts,
+  INGREDIENTS: apiRoutes.ingredients,
+} as const;

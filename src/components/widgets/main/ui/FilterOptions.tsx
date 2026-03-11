@@ -7,12 +7,12 @@ import { RangeSlider } from "@/components/ui/slider";
 import React from "react";
 import {
   FilterIngredient,
-  useIngrediets,
-} from "../../../../../hooks/useIngredients";
+  useIngredients,
+} from "@/entities/ingredient";
 import { TestFilterUi } from "./model/test-filter-ui";
 
 const FilterOptions = () => {
-  const { ingredients, setIngredients } = useIngrediets();
+  const { ingredients, setIngredients } = useIngredients();
 
   const [pizzaType, setPizzaType] = React.useState<FilterIngredient[]>([
     { id: 1, name: "Тонкое", checked: false },

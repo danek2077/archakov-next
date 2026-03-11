@@ -1,4 +1,4 @@
-import { Container } from "@/components/shared/container";
+import { Container } from "@/components/shared/Container";
 import { FilterCheckbox } from "@/components/shared/filter-checkbox";
 import { Title } from "@/components/ui";
 import React from "react";

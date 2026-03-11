@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { FilterCheckbox } from "./filter-checkbox";
 import { Button, Checkbox, Input } from "../ui";
 import { cn } from "@/lib/utils";
-import { FilterIngredient } from "../../../hooks/useIngredients";
+import { FilterIngredient } from "@/entities/ingredient";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 type Props = {

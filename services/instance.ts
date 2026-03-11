@@ -1,2 +1,1 @@
-import axios from 'axios'
-export const axios_instance = axios.create({ baseURL: "http://localhost:3000/api" });
+export { httpClient as axios_instance } from "@/shared/api/http-client";
