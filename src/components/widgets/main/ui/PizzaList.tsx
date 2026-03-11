@@ -1,5 +1,5 @@
 "use client";
-import { FilterUi } from "@/components/shared/filter-ui";
+import { ProductGroupList } from "@/features/product-group-list";
 import React from "react";
 export type pizza_data_type = {
   url: string;
@@ -64,8 +64,8 @@ const PizzaList = () => {
 
   return (
     <div className="w-[1000px]">
-      <FilterUi pizzas_data={pizzas_data} title={'Все'} />
-      <FilterUi pizzas_data={pizzas_data} title={"Комбо"} />
+      <ProductGroupList pizzas_data={pizzas_data} title={'Все'} />
+      <ProductGroupList pizzas_data={pizzas_data} title={"Комбо"} />
       <div className="h-[8000px]"></div>
     </div>
   );

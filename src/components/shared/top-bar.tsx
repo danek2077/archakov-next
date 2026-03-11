@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import Categories from "./categories";
 import Sortpop from "./sortpop";
-import { Container } from "./container";
+import { Container } from "../../shared/components/container";
 
 const TopBar = () => {
   return (

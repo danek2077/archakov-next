@@ -1,8 +1,8 @@
 
-import { Title } from "@/components/ui";
-import { Button } from "@/components/ui";
+import { Title } from "@/shared/ui";
+import { Button } from "@/shared/ui";
 import Categories from "@/components/shared/categories";
-import { Container } from "@/components/shared/container";
+import { Container } from "@/shared/components/container";
 import Sortpop from "@/components/shared/sortpop";
 import TopBar from "@/components/shared/top-bar";
 import { FilterCheckbox } from "@/components/shared/filter-checkbox";

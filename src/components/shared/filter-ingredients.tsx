@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { FilterCheckbox } from "./filter-checkbox";
-import { Button, Checkbox, Input } from "../ui";
+import { Button, Checkbox, Input } from "../../shared/ui";
 import { cn } from "@/lib/utils";
 import { FilterIngredient } from "../../../hooks/useIngredients";
 import Skeleton from "react-loading-skeleton";

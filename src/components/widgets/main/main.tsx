@@ -1,6 +1,6 @@
-import { Container } from "@/components/shared/container";
+import { Container } from "@/shared/components/container";
 import { FilterCheckbox } from "@/components/shared/filter-checkbox";
-import { Title } from "@/components/ui";
+import { Title } from "@/shared/ui";
 import React from "react";
 
 import FilterOptions from "./ui/FilterOptions";

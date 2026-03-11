@@ -1,8 +1,8 @@
 "use client";
 import { FilterCheckbox } from "@/components/shared/filter-checkbox";
 import FilterIngredients from "@/components/shared/filter-ingredients";
-import { Input, Title } from "@/components/ui";
-import { RangeSlider } from "@/components/ui/slider";
+import { Input, Title } from "@/shared/ui";
+import { RangeSlider } from "@/shared/ui/slider";
 
 import React from "react";
 import {

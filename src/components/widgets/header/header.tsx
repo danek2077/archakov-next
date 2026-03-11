@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Button, Input } from "../../ui";
+import { Button, Input } from "../../../shared/ui";
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
-import { Container } from "@/components/shared/container";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { SearchInput } from "@/components/shared/search-input";
+import { Container } from "@/shared/components/container";
 const Header = () => {
   return (
     <header className="mt-5 border-b border-gray-100 pb-4">

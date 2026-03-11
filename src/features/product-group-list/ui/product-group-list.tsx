@@ -1,17 +1,19 @@
 "use client";
+
+import { ProductElemFilter } from "@/components/shared/product-elem-filter";
+import { pizza_data_type } from "@/components/widgets/main/ui/PizzaList";
 import React from "react";
-import { pizza_data_type } from "../widgets/main/ui/PizzaList";
-import { ProductElemFilter } from "./product-elem-filter";
-import { Title } from "../ui";
 import { useIntersection } from "react-use";
-import { useCategoryStore } from "../../../store/store";
+import { useCategoryStore } from "../../../../store/store";
+import { Title } from "@/shared/ui";
+
 interface Props {
   className?: string;
   title: string;
   pizzas_data: pizza_data_type[];
 }
 
-export const FilterUi: React.FC<Props> = ({
+export const ProductGroupList: React.FC<Props> = ({
   className,
   title,
   pizzas_data,

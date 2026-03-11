@@ -6,4 +6,4 @@ export { Input } from "./input";
 export { Popover } from "./popover";
 export { Select } from "./select";
 export { Skeleton } from "./skeleton";
-export { Title } from "../shared/title";
+export { Title } from "../../components/shared/title";

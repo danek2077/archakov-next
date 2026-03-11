@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button, Title } from "../ui";
+import { Button, Title } from "../../shared/ui";
 import { Plus } from "lucide-react";
 import { pizza_data_type } from "../widgets/main/ui/PizzaList";
 

@@ -1,6 +1,7 @@
 import { Product } from "@prisma/client";
-import { axios_instance } from "../instance";
-import { ApiRoutes } from "../constants";
+import { axios_instance } from "../../src/shared/api/instance";
+import { ApiRoutes } from "@/shared/constants/api-routes";
+
 
 export const GetAllProducts = async (query: string): Promise<Product[]> => {
   const { data } = await axios_instance.get<Product[]>(

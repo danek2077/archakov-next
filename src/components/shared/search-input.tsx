@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Input } from "../ui";
+import { Input } from "../../shared/ui";
 import Link from "next/link";
 import { useClickAway, useDebounce } from "react-use";
 import { Product } from "@prisma/client";
@@ -15,9 +15,11 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
   const [focused, setFocused] = React.useState(false);
   const [resProducts, setResProducts] = React.useState<Product[]>([]);
   const ref = React.useRef(null);
+
   useClickAway(ref, () => {
     setFocused(false);
   });
+
   useDebounce(
     async () => {
       const data = await Api.products.GetAllProducts(searchValue);
@@ -26,9 +28,11 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
     100,
     [searchValue]
   );
+
   const changeSearchHandler = async (event: string) => {
     setSearchValue(event);
   };
+  
   return (
     <div className={cn(className)} ref={ref}>
       <Input
